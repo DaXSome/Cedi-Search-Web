@@ -6,15 +6,15 @@ const About = () => {
       <Heading mb={4}>Welcome to Cedi Search</Heading>
       <Text fontSize="lg" mb={6}>
         Where the world of e-commerce unfolds at your fingertips! We understand
-        the dynamic and ever-expanding nature of online shopping, and that's why
-        we've crafted a search engine tailored exclusively for the e-commerce
-        enthusiast.
+        the dynamic and ever-expanding nature of online shopping, and
+        that&apos;s why we&apos;ve crafted a search engine tailored exclusively
+        for the e-commerce enthusiast.
       </Text>
       <Text fontSize="lg" mb={6}>
         Our mission is simple: to connect you with the products you love from
-        the vast landscape of e-commerce platforms. Whether you're hunting for
-        the latest fashion trends, tech gadgets, home decor, or anything in
-        between, we've got you covered. Our advanced search algorithms sift
+        the vast landscape of e-commerce platforms. Whether you&apos;re hunting
+        for the latest fashion trends, tech gadgets, home decor, or anything in
+        between, we&apos;ve got you covered. Our advanced search algorithms sift
         through the digital aisles of your favorite online stores, bringing you
         the most relevant and up-to-date results.
       </Text>
@@ -47,7 +47,7 @@ const About = () => {
         </ListItem>
       </UnorderedList>
       <Text fontSize="lg">
-        Whether you're a seasoned online shopper or just embarking on your
+        Whether you&apos;re a seasoned online shopper or just embarking on your
         e-commerce adventure, Cedi Search is here to simplify and enhance your
         search for the perfect find. Join us in exploring the world of
         e-commerce like never before!

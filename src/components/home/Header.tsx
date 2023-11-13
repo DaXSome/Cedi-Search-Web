@@ -15,7 +15,7 @@ const Header = () => {
         </Text>
       </Heading>
       <Text fontSize="lg" color="gray.500">
-        Ghana's leading E Commerce search engine
+        Ghana&apos;s leading E Commerce search engine
       </Text>
     </Fragment>
   );
