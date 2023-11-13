@@ -1,5 +1,6 @@
 "use client";
 
+import ComingSoon from "@/components/home/ComingSoon";
 import Footer from "@/components/home/Footer";
 import Header from "@/components/home/Header";
 import SearchBox from "@/components/home/SearchBox";
@@ -12,6 +13,7 @@ export default function Home() {
   const [query, setQuery] = useState("");
   const { suggestions } = useGetSuggestions(query);
 
+  const showIsComingSoon = process.env.NODE_ENV === "production";
   return (
     <Box display="flex" flexDirection="column" minHeight="100vh">
       <Container maxW="3xl" flex="1">
@@ -22,7 +24,11 @@ export default function Home() {
           py={{ base: 20, md: 36 }}
         >
           <Header />
-          <SearchBox query={query} setQuery={setQuery} />
+          {showIsComingSoon ? (
+            <ComingSoon />
+          ) : (
+            <SearchBox query={query} setQuery={setQuery} />
+          )}
           <SearchSuggestions suggestions={suggestions} />
         </Stack>
       </Container>
