@@ -1,4 +1,5 @@
 import { Collapse, List, ListItem } from "@chakra-ui/react";
+import { useRouter } from "next/navigation";
 import { FC } from "react";
 
 interface ISuggestionsProps {
@@ -6,6 +7,12 @@ interface ISuggestionsProps {
 }
 
 const SearchSuggestions: FC<ISuggestionsProps> = ({ suggestions }) => {
+  const router = useRouter();
+
+  const handleSuggestionClick = (suggestion: string) => {
+    router.push(`/search?query=${suggestion}`);
+  };
+
   return (
     <Collapse in={suggestions.length > 0} animateOpacity>
       <List
@@ -22,6 +29,7 @@ const SearchSuggestions: FC<ISuggestionsProps> = ({ suggestions }) => {
       >
         {suggestions.map((suggestion, index) => (
           <ListItem
+            onClick={() => handleSuggestionClick(suggestion)}
             key={index}
             p={2}
             cursor="pointer"

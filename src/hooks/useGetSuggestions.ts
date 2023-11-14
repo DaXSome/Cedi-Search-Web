@@ -5,7 +5,8 @@ const useGetSuggestions = (query: string) => {
 
   const getSuggestions = async () => {
     const res = await fetch(
-      `https://cedi-search-search-suggestion-service.vercel.app?query=${query}`,
+      `http://0.0.0.0:8000?query=${query}`,
+      // `https://cedi-search-search-suggestion-service.vercel.app?query=${query}`,
       { cache: "no-cache" },
     );
 
@@ -14,7 +15,7 @@ const useGetSuggestions = (query: string) => {
   };
 
   useEffect(() => {
-    if (query && query.length >= 4) {
+    if (query) {
       getSuggestions();
     } else {
       setSuggestions([]);
