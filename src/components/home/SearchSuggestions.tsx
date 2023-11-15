@@ -4,14 +4,11 @@ import { FC } from "react";
 
 interface ISuggestionsProps {
   suggestions: string[];
+  onClick: (suggestion: string) => void;
 }
 
-const SearchSuggestions: FC<ISuggestionsProps> = ({ suggestions }) => {
+const SearchSuggestions: FC<ISuggestionsProps> = ({ suggestions, onClick }) => {
   const router = useRouter();
-
-  const handleSuggestionClick = (suggestion: string) => {
-    router.push(`/search?query=${suggestion}`);
-  };
 
   return (
     <Collapse in={suggestions.length > 0} animateOpacity>
@@ -29,7 +26,7 @@ const SearchSuggestions: FC<ISuggestionsProps> = ({ suggestions }) => {
       >
         {suggestions.map((suggestion, index) => (
           <ListItem
-            onClick={() => handleSuggestionClick(suggestion)}
+            onClick={() => onClick(suggestion)}
             key={index}
             p={2}
             cursor="pointer"
