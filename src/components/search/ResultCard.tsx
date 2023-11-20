@@ -11,10 +11,11 @@ import {
   chakra,
   useColorModeValue,
 } from "@chakra-ui/react";
+import { FC } from "react";
 import { FaEye } from "react-icons/fa";
 import ProductStars from "../shared/ProductStars";
 
-const ResultCard = ({ name, price, rating, image }: ISearchResult) => {
+const ResultCard: FC<ISearchResult> = ({ name, price, rating, image }) => {
   return (
     <Flex w="full" align="center" justify="center">
       <Box
@@ -25,15 +26,13 @@ const ResultCard = ({ name, price, rating, image }: ISearchResult) => {
         shadow="lg"
         position="relative"
       >
-        {true && (
-          <Circle
-            size="10px"
-            position="absolute"
-            top={2}
-            right={2}
-            bg="red.200"
-          />
-        )}
+        <Circle
+          size="10px"
+          position="absolute"
+          top={2}
+          right={2}
+          bg="red.200"
+        />
 
         <Image src={image} alt={`Picture of ${name}`} roundedTop="lg" />
 
