@@ -1,5 +1,5 @@
 import SearchBox from "@/components/home/SearchBox";
-import ResultCard from "@/components/search/ResultCard";
+import SearchResults from "@/components/search/SearchResults";
 import { ISearchResponse } from "@/data/interfaces";
 import { Fragment } from "react";
 
@@ -20,11 +20,7 @@ const Search = async (params: IParams) => {
     <Fragment>
       <SearchBox />
 
-      <div className="mt-5 grid grid-cols-3 gap-2">
-        {matches.results.map((result) => (
-          <ResultCard key={result.id} {...result} />
-        ))}
-      </div>
+      <SearchResults results={matches.results} />
     </Fragment>
   );
 };
