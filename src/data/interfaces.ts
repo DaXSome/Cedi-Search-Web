@@ -2,7 +2,7 @@ export interface ISearchResult {
   name: string;
   price: number;
   description: string;
-  product_id: string;
+  id: string;
   url: string;
   rating: number;
   image: string;
@@ -10,4 +10,19 @@ export interface ISearchResult {
 
 export interface ISearchResponse {
   results: ISearchResult[];
+}
+
+export interface IProductDetailsResponse {
+  data: IProduct;
+}
+
+export interface IProduct {
+  description: string;
+  images: string[];
+  name: string;
+  price: number;
+  product_id: string;
+  rating: number;
+  source: string;
+  url: string;
 }
