@@ -1,4 +1,3 @@
-// import ResultCard from "@/components/search/ResultCard";
 import SearchBox from "@/components/home/SearchBox";
 import ResultCard from "@/components/search/ResultCard";
 import { ISearchResponse } from "@/data/interfaces";
@@ -23,7 +22,7 @@ const Search = async (params: IParams) => {
 
       <div className="mt-5 grid grid-cols-3 gap-2">
         {matches.results.map((result) => (
-          <ResultCard key={result.product_id} {...result} />
+          <ResultCard key={result.id} {...result} />
         ))}
       </div>
     </Fragment>

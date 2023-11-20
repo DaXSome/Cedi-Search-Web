@@ -1,1 +1,2 @@
-export const CURRENT_HOST = window.location.origin;
+export const CURRENT_HOST =
+  typeof window !== "undefined" && window.location.origin;
