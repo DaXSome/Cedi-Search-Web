@@ -6,7 +6,6 @@ import {
   Button,
   Container,
   Heading,
-  Image,
   SimpleGrid,
   Stack,
   StackDivider,
@@ -14,6 +13,8 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { FC } from "react";
+//@ts-ignore
+import Zoom from "react-img-hover-zoom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
@@ -38,15 +39,7 @@ const ProductDetails: FC<IProductDetailsProps> = ({ product }) => {
           slidesToScroll={1}
         >
           {product.images.map((image) => (
-            <Image
-              rounded={"md"}
-              alt={"product image"}
-              src={image}
-              fit={"cover"}
-              align={"center"}
-              w={"100%"}
-              h={{ base: "100%", sm: "400px", lg: "500px" }}
-            />
+            <Zoom img={image} zoomScale={3} height={600} width={600} />
           ))}
         </Slider>
         <Stack spacing={{ base: 6, md: 10 }}>
