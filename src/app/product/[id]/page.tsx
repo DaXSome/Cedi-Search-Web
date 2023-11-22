@@ -1,4 +1,5 @@
 import ProductDetails from "@/components/product-details/ProductDetails";
+import { SEARCH_SERVICE_URL } from "@/data/constants";
 import { IProductDetailsResponse } from "@/data/interfaces";
 import { Fragment } from "react";
 
@@ -11,7 +12,7 @@ interface IParams {
 const ProductDetailsPage = async (params: IParams) => {
   const { id } = params.params;
 
-  const res = await fetch(`http://localhost:8080/product/${id}`, {
+  const res = await fetch(`${SEARCH_SERVICE_URL}/product/${id}`, {
     cache: "no-cache",
   });
 
