@@ -1,7 +1,7 @@
+import { ChakraProvider } from "@chakra-ui/react";
 import type { Metadata } from "next";
 import { FC, ReactNode } from "react";
 import "./globals.css";
-import { ChakraProvider } from "@chakra-ui/react";
 
 export const metadata: Metadata = {
   title: "Cedi Search",
