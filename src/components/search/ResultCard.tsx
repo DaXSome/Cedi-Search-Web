@@ -36,7 +36,13 @@ const ResultCard: FC<ISearchResult> = ({ name, price, rating, image, id }) => {
             bg="red.200"
           />
 
-          <Image src={image} alt={`Picture of ${name}`} roundedTop="lg" />
+          <Image
+            height={"500px"}
+            width={"500px"}
+            src={image}
+            alt={`Picture of ${name}`}
+            roundedTop="lg"
+          />
 
           <Box p="6">
             <Flex mt="1" justify="space-between" align="center">
