@@ -7,7 +7,7 @@ import SearchBox from "@/components/home/SearchBox";
 import { Box, Container, Stack } from "@chakra-ui/react";
 
 export default function Home() {
-  const showIsComingSoon = process.env.NODE_ENV === "production";
+  const showIsComingSoon = process.env.SHOW_COMING_SOON === "true";
   return (
     <Box display="flex" flexDirection="column" minHeight="100vh">
       <Container maxW="3xl" flex="1">
