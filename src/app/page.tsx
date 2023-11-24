@@ -3,7 +3,7 @@
 import Footer from "@/components/home/Footer";
 import Header from "@/components/home/Header";
 import SearchBox from "@/components/home/SearchBox";
-import { Box, Container, Stack } from "@chakra-ui/react";
+import { Box, Container, Stack, Text } from "@chakra-ui/react";
 
 export default function Home() {
   return (
@@ -17,6 +17,12 @@ export default function Home() {
         >
           <Header />
           <SearchBox />
+          <Text fontSize="lg" color="gray.500">
+            <span role="img" aria-label="warning">
+              ⚠️
+            </span>{" "}
+            In Beta Mode
+          </Text>
         </Stack>
       </Container>
       <Footer />
