@@ -39,7 +39,13 @@ const ProductDetails: FC<IProductDetailsProps> = ({ product }) => {
           slidesToScroll={1}
         >
           {product.images.map((image) => (
-            <Zoom img={image} zoomScale={3} height={600} width={600} />
+            <Zoom
+              key={image}
+              img={image}
+              zoomScale={3}
+              height={600}
+              width={600}
+            />
           ))}
         </Slider>
         <Stack spacing={{ base: 6, md: 10 }}>
