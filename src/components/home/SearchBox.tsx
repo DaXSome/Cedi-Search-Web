@@ -2,9 +2,9 @@
 
 import { CURRENT_HOST } from "@/data/constants";
 import useGetSuggestions from "@/hooks/useGetSuggestions";
-import { Button, HStack, Input } from "@chakra-ui/react";
+import { Button, HStack, Input, chakra } from "@chakra-ui/react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { Fragment, useState } from "react";
+import { FormEvent, useState } from "react";
 import SearchSuggestions from "./SearchSuggestions";
 
 const SearchBox = () => {
@@ -16,15 +16,23 @@ const SearchBox = () => {
   const { suggestions } = useGetSuggestions(query);
 
   const handleSearch = (searchQuery: string) => {
-    const url = new URL(`/search`, CURRENT_HOST);
+    if (query) {
+      const url = new URL(`/search`, CURRENT_HOST);
 
-    url.searchParams.append("query", searchQuery);
+      url.searchParams.append("query", searchQuery);
 
-    router.push(url.toString());
+      router.push(url.toString());
+    }
+  };
+
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    handleSearch(query);
   };
 
   return (
-    <Fragment>
+    <chakra.form onSubmit={handleSubmit}>
       <HStack>
         <Input
           value={query}
@@ -34,7 +42,7 @@ const SearchBox = () => {
         />
 
         <Button
-          onClick={() => handleSearch(query)}
+          type="submit"
           colorScheme={"green"}
           bg={"green.400"}
           rounded={"full"}
@@ -48,7 +56,7 @@ const SearchBox = () => {
       </HStack>
 
       <SearchSuggestions onClick={handleSearch} suggestions={suggestions} />
-    </Fragment>
+    </chakra.form>
   );
 };
 
