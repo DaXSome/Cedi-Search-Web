@@ -1,4 +1,7 @@
-export const CURRENT_HOST = process.env.VERCEL_URL;
+export const CURRENT_HOST =
+  process.env.NODE_ENV === "development"
+    ? "http://localhost:3000"
+    : "https://cedi-search-web.vercel.app";
 
 export const SEARCH_SUGGESTION_SERVICE_URL =
   "https://cedi-search-search-suggestion-service.vercel.app";
