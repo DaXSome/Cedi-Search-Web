@@ -1,5 +1,6 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import type { Metadata } from "next";
+import NextTopLoader from "nextjs-toploader";
 import { FC, ReactNode } from "react";
 import "./globals.css";
 
@@ -16,7 +17,10 @@ const RootLayout: FC<IRootLayoutProps> = ({ children }) => {
   return (
     <html lang="en">
       <body>
-        <ChakraProvider>{children}</ChakraProvider>
+        <ChakraProvider>
+          <NextTopLoader />
+          {children}
+        </ChakraProvider>
       </body>
     </html>
   );
