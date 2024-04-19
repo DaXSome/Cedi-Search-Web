@@ -1,7 +1,7 @@
 import SearchBox from "@/components/home/SearchBox";
 import SearchResults from "@/components/search/SearchResults";
 import { API_URL } from "@/data/constants";
-import { ISearchResponse } from "@/data/interfaces";
+import { ISearchResult } from "@/data/interfaces";
 import { Fragment } from "react";
 
 interface IParams {
@@ -15,13 +15,13 @@ const Search = async (params: IParams) => {
     cache: "no-cache",
   });
 
-  const matches = (await req.json()) as ISearchResponse;
+  const results = (await req.json()) as ISearchResult[];
 
   return (
     <Fragment>
       <SearchBox />
 
-      <SearchResults results={matches.results} />
+      <SearchResults results={results} />
     </Fragment>
   );
 };

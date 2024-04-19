@@ -8,10 +8,6 @@ export interface ISearchResult {
   image: string;
 }
 
-export interface ISearchResponse {
-  results: ISearchResult[];
-}
-
 export interface IProductDetailsResponse {
   data: IProduct;
 }
