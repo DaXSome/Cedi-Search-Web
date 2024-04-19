@@ -1,4 +1,4 @@
-import { SEARCH_SUGGESTION_SERVICE_URL } from "@/data/constants";
+import { API_URL } from "@/data/constants";
 import { useEffect, useState } from "react";
 
 const useGetSuggestions = (query: string) => {
@@ -7,7 +7,7 @@ const useGetSuggestions = (query: string) => {
   const getSuggestions = async () => {
     try {
       const res = await fetch(
-        `${SEARCH_SUGGESTION_SERVICE_URL}?query=${query}`,
+        `${API_URL}?query=${query}`,
         {
           cache: "no-cache",
         },
