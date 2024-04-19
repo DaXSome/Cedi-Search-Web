@@ -1,6 +1,6 @@
 import ProductDetails from "@/components/product-details/ProductDetails";
 import { API_URL } from "@/data/constants";
-import { IProductDetailsResponse } from "@/data/interfaces";
+import { IProduct } from "@/data/interfaces";
 import { Fragment } from "react";
 
 interface IParams {
@@ -16,9 +16,8 @@ const ProductDetailsPage = async (params: IParams) => {
     cache: "no-cache",
   });
 
-  const data = (await res.json()) as IProductDetailsResponse;
+  const product = (await res.json()) as IProduct;
 
-  const product = data.data;
 
   return (
     <Fragment>
