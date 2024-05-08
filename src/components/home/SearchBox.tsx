@@ -51,7 +51,7 @@ const SearchBox = () => {
             bg: "green.500",
           }}
         >
-          Search
+          Search ✨
         </Button>
       </HStack>
 
