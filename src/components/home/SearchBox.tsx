@@ -2,10 +2,19 @@
 
 import { CURRENT_HOST } from "@/data/constants";
 import useGetSuggestions from "@/hooks/useGetSuggestions";
-import { Button, HStack, Input, chakra } from "@chakra-ui/react";
+import {
+  Button,
+  HStack,
+  Input,
+  InputGroup,
+  InputRightAddon,
+  InputRightElement,
+  chakra,
+} from "@chakra-ui/react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { FormEvent, useState } from "react";
 import SearchSuggestions from "./SearchSuggestions";
+import ClipLoader from "react-spinners/ClipLoader";
 
 const SearchBox = () => {
   const router = useRouter();
@@ -13,7 +22,7 @@ const SearchBox = () => {
 
   const [query, setQuery] = useState(searchParams.get("query") || "");
 
-  const { suggestions } = useGetSuggestions(query);
+  const { suggestions, isLoading } = useGetSuggestions(query);
 
   const handleSearch = (searchQuery: string) => {
     if (query) {
@@ -34,13 +43,22 @@ const SearchBox = () => {
   return (
     <chakra.form onSubmit={handleSubmit}>
       <HStack>
-        <Input
-          value={query}
-          onChange={(event) => setQuery(event.target.value)}
-          autoFocus={true}
-          placeholder="A world of products"
-        />
-
+        <InputGroup>
+          <Input
+            value={query}
+            onChange={(event) => setQuery(event.target.value)}
+            autoFocus={true}
+            placeholder="A world of products"
+          />
+          <InputRightElement >
+            <ClipLoader
+              loading={isLoading}
+              size={30}
+              aria-label="Loading Spinner"
+              data-testid="loader"
+            />
+          </InputRightElement>
+        </InputGroup>
         <Button
           type="submit"
           colorScheme={"green"}
