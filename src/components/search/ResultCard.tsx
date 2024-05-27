@@ -5,15 +5,11 @@ import {
   Box,
   Circle,
   Flex,
-  Icon,
   Image,
   Link,
-  Tooltip,
-  chakra,
   useColorModeValue,
 } from "@chakra-ui/react";
 import { FC } from "react";
-import { FaEye } from "react-icons/fa";
 import ProductStars from "../shared/ProductStars";
 
 const ResultCard: FC<ISearchResult> = ({ name, price, rating, image, id }) => {
@@ -37,7 +33,7 @@ const ResultCard: FC<ISearchResult> = ({ name, price, rating, image, id }) => {
           />
 
           <Image
-            height={"500px"}
+            height={"200px"}
             width={"500px"}
             src={image}
             alt={`Picture of ${name}`}
@@ -45,40 +41,31 @@ const ResultCard: FC<ISearchResult> = ({ name, price, rating, image, id }) => {
           />
 
           <Box p="6">
+            <Box
+              fontSize="xl"
+              fontWeight={"bold"}
+              color={useColorModeValue("gray.800", "white")}
+            >
+              <Box as="span" fontWeight={"bold"}  fontSize="lg">
+                ₵
+              </Box>
+              {price.toFixed(2)}
+            </Box>
+
             <Flex mt="1" justify="space-between" align="center">
               <Box
-                fontSize="2xl"
+                fontSize="l"
                 fontWeight="semibold"
                 as="h4"
                 lineHeight="tight"
-                isTruncated
+                noOfLines={2}
               >
                 {name}
               </Box>
-              <Tooltip
-                label="View"
-                bg="white"
-                placement="top"
-                color="gray.800"
-                fontSize="1.2em"
-              >
-                <chakra.a href="#" display="flex">
-                  <Icon as={FaEye} h={7} w={7} alignSelf="center" />
-                </chakra.a>
-              </Tooltip>
             </Flex>
 
-            <Flex justify="space-between" align="center">
+            <Flex justify="space-between" marginTop={3} align="center">
               <ProductStars rating={rating} />
-              <Box
-                fontSize="2xl"
-                color={useColorModeValue("gray.800", "white")}
-              >
-                <Box as="span" color="gray.600" fontSize="lg">
-                  ₵
-                </Box>
-                {price.toFixed(2)}
-              </Box>
             </Flex>
           </Box>
         </Box>

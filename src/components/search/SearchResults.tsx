@@ -8,7 +8,7 @@ interface ISearchResultsProps {
 }
 const SearchResults: FC<ISearchResultsProps> = ({ results }) => {
   return (
-    <SimpleGrid columns={{ base: 1, md: 3 }} spacing={2}>
+    <SimpleGrid gap={"20px"} margin={"40px"} columns={{ base: 1, md: 4 }} spacing={2}>
       {results.map((result) => (
         <ResultCard key={result.id} {...result} />
       ))}
