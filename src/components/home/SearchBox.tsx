@@ -7,7 +7,6 @@ import {
   HStack,
   Input,
   InputGroup,
-  InputRightAddon,
   InputRightElement,
   chakra,
 } from "@chakra-ui/react";
