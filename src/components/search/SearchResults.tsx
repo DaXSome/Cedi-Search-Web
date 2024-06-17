@@ -10,7 +10,7 @@ const SearchResults: FC<ISearchResultsProps> = ({ results }) => {
   return (
     <SimpleGrid gap={"20px"} margin={"40px"} columns={{ base: 1, md: 4 }} spacing={2}>
       {results.map((result) => (
-        <ResultCard key={result.id} {...result} />
+        <ResultCard key={result.slug} {...result} />
       ))}
     </SimpleGrid>
   );
