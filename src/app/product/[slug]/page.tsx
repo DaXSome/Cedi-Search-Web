@@ -5,19 +5,18 @@ import { Fragment } from "react";
 
 interface IParams {
   params: {
-    id: string;
+    slug: string;
   };
 }
 
 const ProductDetailsPage = async (params: IParams) => {
-  const { id } = params.params;
+  const { slug } = params.params;
 
-  const res = await fetch(`${API_URL}/product/${id}`, {
+  const res = await fetch(`${API_URL}/product/${slug}`, {
     cache: "no-cache",
   });
 
   const product = (await res.json()) as IProduct;
-
 
   return (
     <Fragment>

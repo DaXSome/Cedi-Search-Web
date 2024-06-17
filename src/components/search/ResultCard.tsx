@@ -12,10 +12,10 @@ import {
 import { FC } from "react";
 import ProductStars from "../shared/ProductStars";
 
-const ResultCard: FC<ISearchResult> = ({ name, price, rating, image, id }) => {
+const ResultCard: FC<ISearchResult> = ({ name, price, rating, image, slug}) => {
   return (
     <Flex w="full" align="center" justify="center">
-      <Link href={`/product/${id}`}>
+      <Link href={`/product/${slug}`}>
         <Box
           bg={useColorModeValue("white", "gray.800")}
           maxW="sm"

@@ -2,10 +2,10 @@ export interface ISearchResult {
   name: string;
   price: number;
   description: string;
-  id: string;
   url: string;
   rating: number;
   image: string;
+  slug: string
 }
 
 export interface IProduct {
