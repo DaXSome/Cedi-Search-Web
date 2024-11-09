@@ -5,6 +5,7 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -26,6 +27,11 @@ const Footer = () => {
             About
           </Box>
         </Stack>
+
+        <Text fontSize="lg" color="gray.500">
+          Powered by <Link href="https://daxsome.owbird.site">DaXSome</Link>
+        </Text>
+
         <Text>
           &copy; {new Date().getFullYear()} Cedi Search. All rights reserved
         </Text>
