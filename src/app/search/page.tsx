@@ -17,13 +17,7 @@ const Search = async (params: IParams) => {
 
   const results = (await req.json()) as ISearchResult[];
 
-  return (
-    <Fragment>
-      <SearchBox />
-
-      <SearchResults results={results} />
-    </Fragment>
-  );
+  return <></>;
 };
 
 export default Search;

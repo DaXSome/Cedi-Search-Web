@@ -1,7 +1,5 @@
-import ProductDetails from "@/components/product-details/ProductDetails";
 import { API_URL } from "@/data/constants";
 import { IProduct } from "@/data/interfaces";
-import { Fragment } from "react";
 
 interface IParams {
   params: {
@@ -18,11 +16,7 @@ const ProductDetailsPage = async (params: IParams) => {
 
   const product = (await res.json()) as IProduct;
 
-  return (
-    <Fragment>
-      <ProductDetails product={product} />
-    </Fragment>
-  );
+  return <></>;
 };
 
 export default ProductDetailsPage;
