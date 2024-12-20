@@ -4,7 +4,7 @@ export interface ISearchResult {
   description: string;
   url: string;
   rating: number;
-  image: string;
+  images: string[];
   slug: string
 }
 

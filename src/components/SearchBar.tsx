@@ -1,17 +1,12 @@
 "use client";
 
-import { liteClient as algoliasearch } from "algoliasearch/lite";
 import { autocomplete, getAlgoliaResults } from "@algolia/autocomplete-js";
 import { useEffect } from "react";
 import "@algolia/autocomplete-theme-classic";
 import { useRouter } from "next/navigation";
+import { searchClient } from "@/lib/utils";
 
 const SearchBar = () => {
-  const searchClient = algoliasearch(
-    process.env.NEXT_PUBLIC_ALGOLIA_APP_ID!,
-    process.env.NEXT_PUBLIC_ALGOLIA_API_KEY!,
-  );
-
   const router = useRouter();
 
   useEffect(() => {
