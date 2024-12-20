@@ -1,7 +1,14 @@
 "use client";
 
 import React from "react";
-import { InstantSearch, Hits, SearchBox, Configure } from "react-instantsearch";
+import {
+  InstantSearch,
+  Hits,
+  SearchBox,
+  Configure,
+  Pagination,
+  Stats,
+} from "react-instantsearch";
 import Logo from "@/components/Logo";
 import FacetSidebar from "@/components/FacetSidebar";
 import SearchResultItem from "@/components/SearchResultItem";
@@ -29,13 +36,16 @@ const SearchPage = () => {
             <SearchBox />
           </div>
         </header>
-        <main className="flex-grow container mx-auto px-4 py-8 flex">
+        <main className="container mx-auto px-4 py-8 flex">
           <aside className="hidden md:block">
             <FacetSidebar />
           </aside>
           <div className="flex-grow md:ml-8">
             <Configure hitsPerPage={10} />
+            <Stats />
+
             <Hits hitComponent={SearchResultItem} />
+            <Pagination />
           </div>
         </main>
       </div>

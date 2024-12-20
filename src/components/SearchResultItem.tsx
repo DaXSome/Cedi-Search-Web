@@ -8,26 +8,29 @@ interface SearchResultItemProps {
 
 const SearchResultItem: React.FC<SearchResultItemProps> = ({ hit }) => {
   return (
-    <div className="mb-6 p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow border border-gray-200">
-      {hit.images?.[0] && (
-        <div className="mb-4">
-          <img
-            src={hit.images[0]}
-            alt={hit.name}
-            className="w-full h-40 object-cover rounded-md"
-          />
-        </div>
-      )}
+    <div className="mb-6 p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow border border-gray-200 w-full">
 
-      <h3 className="text-xl font-bold mb-2 text-gray-800">
-        <a href="#" className="text-primary hover:underline">
-          {hit.name}
-        </a>
-      </h3>
+      <div className="flex gap-3 justify-center">
+        {hit.images.map((src) => (
+          <div className="mb-4">
+            <img
+              src={src}
+              alt={hit.name}
+              className="w-full h-40 object-cover rounded-md"
+            />
+          </div>
+        ))}
+      </div>
 
-      <p className="text-gray-600 text-sm mb-4">
-        {hit.description || "No description available."}
-      </p>
+      <h3 className="text-xl font-bold mb-2 text-gray-800">{hit.name}</h3>
+
+      <div>
+        {hit.description.split("\\n").map((desc, index) => (
+          <p key={index} className="text-gray-600 text-sm mb-4">
+            {desc}
+          </p>
+        ))}
+      </div>
 
       <div>
         <a
