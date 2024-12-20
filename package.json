@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@algolia/autocomplete-js": "^1.17.8",
+    "@algolia/autocomplete-theme-classic": "^1.17.8",
+    "algoliasearch": "^5.18.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.468.0",
