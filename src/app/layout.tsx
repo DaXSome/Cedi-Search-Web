@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import NextTopLoader from "nextjs-toploader";
 import { FC, ReactNode } from "react";
 import "./globals.css";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Cedi Search",
@@ -19,6 +20,7 @@ const RootLayout: FC<IRootLayoutProps> = ({ children }) => {
         <NextTopLoader />
         {children}
       </body>
+      <Footer />
     </html>
   );
 };

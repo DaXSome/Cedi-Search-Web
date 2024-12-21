@@ -8,17 +8,6 @@ const Home = () => {
         <Logo />
         <SearchBar />
       </main>
-      <footer className="w-full py-4 text-center text-sm text-gray-600">
-        Powered by{" "}
-        <a
-          href="https://daxsome.owbird.site"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-primary hover:underline"
-        >
-          DaXSome
-        </a>
-      </footer>
     </div>
   );
 };
