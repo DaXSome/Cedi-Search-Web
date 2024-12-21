@@ -1,6 +1,10 @@
+import Link from "next/link";
+
 const Logo = () => {
   return (
-    <div className="text-4xl font-bold text-primary mb-8">Cedi Search</div>
+    <Link href="/" className="text-4xl font-bold text-primary">
+      Cedi <span className="text-green-400"> Search</span>
+    </Link>
   );
 };
 
