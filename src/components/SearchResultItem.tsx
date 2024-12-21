@@ -9,10 +9,9 @@ interface SearchResultItemProps {
 const SearchResultItem: React.FC<SearchResultItemProps> = ({ hit }) => {
   return (
     <div className="mb-6 p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow border border-gray-200 w-full">
-
       <div className="flex gap-3 justify-center">
         {hit.images.map((src) => (
-          <div className="mb-4">
+          <div key={src} className="mb-4">
             <img
               src={src}
               alt={hit.name}
