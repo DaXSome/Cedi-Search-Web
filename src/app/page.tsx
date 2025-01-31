@@ -6,7 +6,7 @@ const Home = () => {
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50">
       <main className="flex flex-col items-center justify-center flex-grow w-full px-4">
         <Logo />
-        {process.env.NODE_ENV !== "development" ? (
+        {process.env.NODE_ENV === "development" ? (
           <SearchBar />
         ) : (
           <div className="text-center p-6 bg-white shadow-lg rounded-lg">
