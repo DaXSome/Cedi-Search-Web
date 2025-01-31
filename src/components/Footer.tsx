@@ -12,7 +12,7 @@ const Footer = () => {
 
         <p className="text-lg text-gray-500">
           Powered by{" "}
-          <Link href="https://daxsome.owbird.site">
+          <Link href="https://daxsome.org">
             DaXSome
           </Link>
         </p>
