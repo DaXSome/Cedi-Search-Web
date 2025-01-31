@@ -3,6 +3,7 @@ import NextTopLoader from "nextjs-toploader";
 import { FC, ReactNode } from "react";
 import "./globals.css";
 import Footer from "@/components/Footer";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
   title: "Cedi Search",
@@ -21,6 +22,10 @@ const RootLayout: FC<IRootLayoutProps> = ({ children }) => {
         {children}
       </body>
       <Footer />
+
+      {process.env.NODE_ENV === "production" && (
+        <GoogleAnalytics gaId="G-RQ0XKFR86Y" />
+      )}
     </html>
   );
 };
