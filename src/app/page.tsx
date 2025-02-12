@@ -3,7 +3,7 @@ import SearchBar from "@/components/SearchBar";
 
 const Home = () => {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50">
+    <div className="h-screen flex flex-col items-center bg-gray-50">
       <main className="flex flex-col items-center justify-center flex-grow w-full px-4">
         <Logo />
         {process.env.NODE_ENV === "development" ? (
@@ -14,7 +14,7 @@ const Home = () => {
               Coming Soon
             </h2>
             <p className="text-gray-600 mt-2">
-              We're working on something awesome. Stay tuned!
+              We&apos;re working on something awesome. Stay tuned!
             </p>
           </div>
         )}
